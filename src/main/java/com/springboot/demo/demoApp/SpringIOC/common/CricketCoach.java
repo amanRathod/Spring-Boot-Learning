@@ -1,4 +1,4 @@
-package com.springboot.demo.demoApp.SpringIOC;
+package com.springboot.demo.demoApp.SpringIOC.common;
 
 import org.springframework.stereotype.Component;
 

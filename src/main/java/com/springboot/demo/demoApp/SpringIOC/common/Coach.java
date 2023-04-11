@@ -1,4 +1,4 @@
-package com.springboot.demo.demoApp.SpringIOC;
+package com.springboot.demo.demoApp.SpringIOC.common;
 
 public interface Coach {
     String getDailyWorkout();
