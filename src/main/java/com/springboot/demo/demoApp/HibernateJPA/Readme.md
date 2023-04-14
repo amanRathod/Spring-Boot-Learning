@@ -6,7 +6,7 @@ It is a persistence technologies that can be used to interact with a database.
 It defines a set of interfaces and annotations that allow you to map Java objects to relational database tables and vice versa.
 
 JPA provides the ``EntityManager`` interface which is used to perform database operations on JPA entities. It provides methods for CRUD (Create, Read, Update, Delete) operations.
-```
+```java
 @Autowired
 private EntityManager entityManager;
 
