@@ -12,7 +12,7 @@ Dependency Injection makes our programming code loosely coupled.
 
 It means that the container injects dependencies (i.e., objects that a class depends on) into the class at runtime, rather than having the class create or find its dependencies itself.
 
-```
+```java
 @Service
 public class MyService {
     private final MyRepository repository;
