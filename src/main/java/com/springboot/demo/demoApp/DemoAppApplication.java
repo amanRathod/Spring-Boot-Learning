@@ -19,11 +19,4 @@ public class DemoAppApplication {
 		SpringApplication.run(DemoAppApplication.class, args);
 	}
 
-//	@Bean
-//	public CommandLineRunner commandLineRunner(String[] args) {
-//		return runner -> {
-//			System.out.println("Database connected successfully");
-//		};
-//	}
-
 }

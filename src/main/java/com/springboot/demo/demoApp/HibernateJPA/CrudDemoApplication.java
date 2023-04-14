@@ -10,6 +10,8 @@ import java.util.List;
 
 @SpringBootApplication
 public class CrudDemoApplication {
+    // It is an interface that allows to define a callback method
+    // that will be executed when the application is started.
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 
