@@ -1,5 +1,7 @@
 # REST API
 
+REST controller is a class that handles HTTP requests and produces HTTP responses in the form of JSON or XML data.
+
 ```java
 @RestController
 @RequestMapping("/api")
@@ -32,6 +34,32 @@ public class UserController {
 }
 
 ```
+
+### [ResponseEntity](https://www.baeldung.com/spring-response-entity)
+**ResponseEntity** class is used to represent an HTTP response, including the status code, headers, and body. 
+
+It allows you to customize the response sent back to the client.
+```java
+@RestController
+@RequestMapping("/api")
+public class UserController {
+
+    @GetMapping("/users/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+        //logic to get user from database by ID
+        User user = userService.getUserById(id);
+        if (user != null) {
+            return new ResponseEntity<>(user, HttpStatus.OK);
+            // return ResponseEntity.status(HttpStatus.OK).body(user);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+}
+
+```
+
 
 ### Annotation
 1. ``@RestController``: It  is used to indicate that a class is a **``REST``** controller that handles HTTP requests and produces HTTP responses in the form of JSON or XML data. It  is a combination of the @Controller and @ResponseBody annotations.
