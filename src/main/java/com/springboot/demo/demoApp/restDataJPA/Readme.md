@@ -5,7 +5,7 @@ It's interfaces that extend the ``JpaRepository interface`` provided by Spring D
 It allows developers to focus on writing business logic instead of database queries.
 
 Example:
-```
+```java
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 }
@@ -14,7 +14,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 - The ``UserRepository`` interface extends the ``JpaRepository interface`` and specifies the **User** class as the entity type and **Long** as the type of the primary key.
 
 JPA to interact with ``User`` entity:
-```
+```java
 @RestController
 public class UserController {
     @Autowired
@@ -39,7 +39,7 @@ public class UserController {
 It  allow you to define queries based on the method names of your repository interface.
 
 Spring Boot automatically generates the necessary SQL statements for performing the specified queries.
-```
+```java
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     // finds all employees in a given department.
@@ -63,7 +63,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 It allows you to write database queries in an object-oriented way, using entity classes and their fields instead of tables and columns.
 
 In JPQL, **entity names** are used instead of table names, and **attribute names** are used instead of column names.
-```
+```java
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
