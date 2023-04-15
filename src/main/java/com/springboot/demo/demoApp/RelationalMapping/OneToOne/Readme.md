@@ -69,7 +69,8 @@ public class Person {
 
     private String name;
 
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
 
     // constructors, getters and setters
@@ -91,13 +92,13 @@ public class Address {
 
     private String zipCode;
 
-    @OneToOne
-    @JoinColumn(name = "person_id")
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
     private Person person;
 
     // constructors, getters and setters
 }
 
 ```
-- The Person entity has a reference to an Address entity using the ```@OneToOne``` annotation with the **mappedBy** attribute.
-- The Address entity has a reference to the Person entity using the @OneToOne annotation with the ```@JoinColumn``` annotation.
+- The Person entity has a reference to an Address entity using the ```@OneToOne``` annotation with the ```@JoinColumn``` annotation.
+- The Address entity has a reference to the Person entity using the ```@OneToOne``` annotation with the **mappedBy** attribute.
+- The **mappedBy** attribute in the Address entity's @OneToOne annotation specifies that the association is mapped by the ``address`` field in the Person entity. This means that the **address field** in the **Person** entity is the owning side of the association, and it's responsible for managing the foreign key column in the association.
