@@ -43,3 +43,7 @@ public class Project {
 - The joinColumns attribute specifies the foreign key column(s) in the join table that reference the primary key column(s) of the Employee entity.
 -  The ``inverseJoinColumns`` attribute specifies the foreign key column(s) in the join table that reference the primary key column(s) of the Project entity.
 -  The ``mappedBy`` attribute is used to specify the name of the property in the Employee entity that maps the relationship.
+
+<br>
+
+![img.png](img.png)
